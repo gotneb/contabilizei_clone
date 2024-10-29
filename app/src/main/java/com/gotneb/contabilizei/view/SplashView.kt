@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.gotneb.contabilizei.CreateAccountScreen
+import com.gotneb.contabilizei.LoginScreen
 import com.gotneb.contabilizei.R
 
 
@@ -78,7 +79,7 @@ fun SplashView(navController: NavController) {
                 ) { Text("Criar Acesso") }
                 Spacer(Modifier.height(12.dp))
                 OutlinedButton(
-                    onClick = {},
+                    onClick = { navController.navigate(LoginScreen) },
                     modifier = Modifier.fillMaxWidth(),
                 ) { Text("Entrar com Login e Senha") }
             }

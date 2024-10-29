@@ -53,7 +53,7 @@ fun CreateAccountView() {
             TextField(
                 value = value,
                 onValueChange = { value = it },
-                label = { Text(text = "Insira o CNPJ") },
+                placeholder = { Text(text = "Insira o CNPJ") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 maxLines = 1,
                 modifier = Modifier.fillMaxWidth()
