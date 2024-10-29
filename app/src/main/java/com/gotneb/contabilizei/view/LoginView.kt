@@ -31,7 +31,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.key.Key.Companion.Home
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -40,7 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.gotneb.contabilizei.HomeDest
+import com.gotneb.contabilizei.HomeScreen
 import com.gotneb.contabilizei.R
 
 
@@ -95,9 +94,10 @@ fun LoginView(navController: NavController) {
             TextButton(
                 onClick = {},
                 contentPadding = PaddingValues(0.dp),
+                modifier = Modifier.fillMaxWidth()
             ) { Text("Esqueci minha senha") }
             Button(
-                onClick = { navController.navigate(HomeDest) },
+                onClick = { navController.navigate(HomeScreen) },
                 contentPadding = PaddingValues(8.dp),
                 enabled = (userText.isNotEmpty() && password.isNotEmpty()),
                 modifier = Modifier.fillMaxWidth(),

@@ -11,15 +11,21 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.gotneb.contabilizei.ui.theme.ContabilizeiTheme
+import com.gotneb.contabilizei.view.CreateAccountView
 import com.gotneb.contabilizei.view.HomeView
 import com.gotneb.contabilizei.view.LoginView
+import com.gotneb.contabilizei.view.SplashView
 import kotlinx.serialization.Serializable
 
 
 @Serializable
-object LoginDest
+object CreateAccountScreen
 @Serializable
-object HomeDest
+object LoginScreen
+@Serializable
+object HomeScreen
+@Serializable
+object SplashScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,9 +35,11 @@ class MainActivity : ComponentActivity() {
             ContabilizeiTheme {
                 val navController = rememberNavController()
                 Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
-                    NavHost(navController = navController, startDestination = LoginDest) {
-                        composable<LoginDest> { LoginView(navController) }
-                        composable<HomeDest> { HomeView() }
+                    NavHost(navController = navController, startDestination = SplashScreen) {
+                        composable<LoginScreen> { LoginView(navController) }
+                        composable<HomeScreen> { HomeView() }
+                        composable<SplashScreen> { SplashView(navController) }
+                        composable<CreateAccountScreen> { CreateAccountView() }
                     }
                 }
             }
